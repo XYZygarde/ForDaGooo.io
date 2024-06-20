@@ -480,7 +480,7 @@ function drawRouteBetweenPoints(loc1, loc2) {
     console.log(`${origin},${destination}`);
     haversineDistance(origin,destination);
 
-    const routeRequestUrl = `http://dev.virtualearth.net/REST/V1/Routes/Driving?wp.0=${origin}&wp.1=${destination}&key=Ajsa8ckEGwA2lbTuYiKgKz41tu4umVSf4KFBJZD8KdNJmG0XvxSjNFRULvq3Z-sG&routePathOutput=Points`;
+    const routeRequestUrl = `https://dev.virtualearth.net/REST/V1/Routes/Driving?wp.0=${origin}&wp.1=${destination}&key=Ajsa8ckEGwA2lbTuYiKgKz41tu4umVSf4KFBJZD8KdNJmG0XvxSjNFRULvq3Z-sG&routePathOutput=Points`;
 
     fetch(routeRequestUrl)
         .then(response => response.json())
