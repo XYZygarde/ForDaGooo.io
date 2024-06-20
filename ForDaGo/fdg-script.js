@@ -15,6 +15,51 @@ let noRepeat = []; // object for index repeated
 let msgData = []; //object for error messages
 const bingApi = 'Ajsa8ckEGwA2lbTuYiKgKz41tu4umVSf4KFBJZD8KdNJmG0XvxSjNFRULvq3Z-sG'; //BING MAP API KEY
 
+//TEST TO GET YOUR LOCATION
+
+function getLocation() {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    } else {
+        console.error("Geolocation is not supported in this browser.");
+    }
+}
+
+function successCallback(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const location = new Microsoft.Maps.Location(latitude, longitude);
+    sharedPushpin(location);
+    map.setView({
+        center: location,
+        zoom: 25
+    });
+}
+
+
+function sharedPushpin(location, label = 0, color = 'green') {
+    const yourpin = new Microsoft.Maps.Pushpin(location, {
+        title: `You're here!`,
+        subTitle: `${location.latitude.toFixed(4)}, ${location.longitude.toFixed(4)}`,
+        text: label,
+        color: color
+    });
+
+    Microsoft.Maps.Events.addHandler(yourpin, 'click', () => {
+        removePushpin(yourpin, location);
+    });
+    map.entities.push(yourpin);
+   
+}
+
+
+function errorCallback(error) {
+    console.error(`Geolocation error: ${error.message}`);
+    alert("Failed to get your location.");
+}
+
+// ENDS HERE
+
 
 function initMap() {
     map = new Microsoft.Maps.Map('.mapcontainer', {
@@ -23,6 +68,7 @@ function initMap() {
         mapTypeId: Microsoft.Maps.MapTypeId.road,
         zoom: 16
     });
+    getLocation();
     loadSearchModule();
     attachMapClickHandler();
 }
