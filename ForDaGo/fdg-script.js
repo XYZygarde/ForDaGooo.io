@@ -15,6 +15,7 @@ let noRepeat = []; // object for index repeated
 let msgData = []; //object for error messages
 const bingApi = 'Ajsa8ckEGwA2lbTuYiKgKz41tu4umVSf4KFBJZD8KdNJmG0XvxSjNFRULvq3Z-sG'; //BING MAP API KEY
 
+
 function initMap() {
     map = new Microsoft.Maps.Map('.mapcontainer', {
         credentials: bingApi,
