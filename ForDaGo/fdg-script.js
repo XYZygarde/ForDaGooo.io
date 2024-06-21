@@ -4,6 +4,7 @@ const searchList = document.querySelector('.searchList');
 const clearList = document.getElementById("clearDataLoc");
 const fade_in_msg = document.querySelector('.msgpane');
 const msgbox = document.getElementById("msghere");
+const trackpin = document.querySelector('.pinbtn');
 let map, searchManager;
 let clickCount = 0;
 let locObj;
@@ -17,6 +18,7 @@ const bingApi = 'Ajsa8ckEGwA2lbTuYiKgKz41tu4umVSf4KFBJZD8KdNJmG0XvxSjNFRULvq3Z-s
 
 //TEST TO GET YOUR LOCATION
 
+
 function getLocation() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -24,6 +26,9 @@ function getLocation() {
         console.error("Geolocation is not supported in this browser.");
     }
 }
+
+trackpin.addEventListener('click', getLocation);
+
 
 function successCallback(position) {
     const latitude = position.coords.latitude;
@@ -68,7 +73,6 @@ function initMap() {
         mapTypeId: Microsoft.Maps.MapTypeId.road,
         zoom: 16
     });
-    getLocation();
     loadSearchModule();
     attachMapClickHandler();
 }
@@ -613,3 +617,6 @@ fade_in_msg.addEventListener('click', function(event) {
         msgData = [];
     }
 });
+
+
+
