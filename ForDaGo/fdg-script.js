@@ -293,7 +293,7 @@ function addDataToTable(event) {
     const longitude = selectedOption.getAttribute("data-lng");
 
     if (latitude === null || longitude === null) {
-        msgData.push("Data is empty");
+        msgData.push("Please select a pin");
         messageCall();
         return;
     }
