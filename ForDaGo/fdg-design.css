@@ -373,7 +373,7 @@ body{
         width: auto;
     }
     .searchbar, .searchbtn, .pinbtn{
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     .editform, .msgpane {
