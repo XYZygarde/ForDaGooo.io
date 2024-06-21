@@ -371,9 +371,10 @@ body{
     }
     #searchNav{
         width: auto;
-        padding-top: 100px;
     }
-  
+    .searchbar, .searchbtn, .pinbtn{
+        margin-top: 30px;
+    }
 
     .editform, .msgpane {
         width: 100%;
