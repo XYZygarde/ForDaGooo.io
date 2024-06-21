@@ -121,13 +121,13 @@ body{
     border-radius: 10px;
     padding-left: 10px;
 }
-.searchbtn{
+.searchbtn, .pinbtn{
     height: 30px;
     width: 30px;
     padding-left: 10px;
     cursor: pointer;
 }
-.searchbtn:active{
+.searchbtn:active, .pinbtn:active{
     transform: scale(0.85);
 }
 .mapcontainer{
@@ -324,7 +324,12 @@ body{
 }
 
 @media only screen and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
+    
     .mainpane {
+        overflow-x: hidden;
         width: 100%;
         margin: auto ;
     }
@@ -379,13 +384,26 @@ body{
     }
  
     .editform form, .msgpane div {
-        width: 50%;
+        width: 60%;
         margin: auto auto;
         border-radius: 15px;
         padding: 15px;
         background: #102C57;
         height: 50px;
         border: 0 4px 8px 0 rgba(0,0,0,0.5);
+    }
+    .editform form label{
+        font-size: 14px;
+    }
+    .editform form input[type="text"]{
+        width: 100%;
+        font-size:12px;
+    }
+    .editform form input[type="submit"]{
+        font-size: 12px;
+        padding: 10px;
+        padding-top: 5px;
+
     }
     .msgpane div p{
         font-size: 12px;
