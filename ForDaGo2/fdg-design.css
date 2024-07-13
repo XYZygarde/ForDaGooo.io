@@ -316,6 +316,7 @@ body{
         z-index: 21;
         justify-content: center;
         height: 50vh;
+        top: 40px;
     }
     .title{
         width: auto;
