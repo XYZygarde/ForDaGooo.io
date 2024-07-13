@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family:"Poppins",sans-serif ;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),url(FDGL_sources/webbg.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+}
+.navbar{
+    height: 100px;
+    width: 100%;
+    position: fixed;  
+    z-index: 555;
+    display: flex;
+}
+.nav-con {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    align-items: center;
+    margin-right: 50px;
+}
+.nav-con li{
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+}
+.nav-con li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+}
+.nav-con li a:hover{
+    font-weight: bold;
+}
+.navbar img{
+    margin-right: auto;
+}
+
+#burger-icon{
+    font-size: 27px;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-active {
+    transform: translateY(0%);
+}
+
+
+/* main content */ 
+
+.titlePane{
+    top:100px;
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    min-height: 70vh;
+}
+.titlePane img{
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.titleText{
+    height:250px;
+    width: 550px;
+}
+.titleText h1{
+    font-size: 60px;
+    word-spacing: 1rem;
+}
+.titleText p{
+    font-size: 20px;
+    word-spacing:1rem;
+}
+.titleText button{
+    background: none;
+    border: none;
+    font-size: 16px;
+    background: #14274E;
+    color: #fff;
+    height: 50px;
+    width: 160px;
+    border-radius: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.titleText button:hover{
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.5);
+}
+.titleText button:active{
+    background: none;
+    box-shadow: none;
+    border: 1px solid #14274E;
+    color: #14274E;
+}
+
+/* footer content */
+
+footer{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 0;
+}
+.footer-pane{
+    height: 150px;
+    width: 100%;
+    background: #14274E;
+    z-index: 250;
+    justify-content: space-around;
+    bottom: 0;
+    display: flex;
+}
+.footer-content ul{
+    display: flex;
+    list-style: none;
+    margin: 50px 10px;
+    justify-content: center;
+}
+.footer-content ul li{
+    background: #000;
+    border-radius: 10px;
+    margin-right: 30px;
+    padding: 10px 5px 5px;
+    justify-content: center;
+    display: flex;
+    height: 25px;
+    width: 30px;
+    align-items: center;
+}
+.footer-crdts{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    margin-top:60px;
+}
+.footer-crdts p{
+    margin-right: 100px;
+    font-weight: lighter;
+}
+
+
+
+@media(max-width: 800px) {
+    body{
+        background: #FFF8F3;
+        overflow-x:hidden;
+    }
+   .navbar{
+        display: block;
+        width: 100%;
+   }
+    #burger-icon{
+        display: block;
+        z-index: 100;
+        font-size: 20px;
+        position: absolute;
+        right: 0;
+        margin-right: 50px;
+        top: 20px;
+    }
+    .navbar img{
+        max-width: fit-content;
+        height: 50px;
+        margin: 5px auto;
+        z-index: 5;
+     }
+    .nav-con{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        min-height: 100vh;
+        background: #14274E;
+        left: 0;
+        justify-content: center;
+        gap: 5rem;
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: -1;
+    }
+    .nav-con li{
+        opacity: 0;
+        margin-left: 0;
+    }
+    .nav-con li a{
+        color: #fff;
+    }
+    .fixing-nav{
+        transform: translateX(0);
+    }
+    .fixing-burger{
+        color: #fff;
+    }
+    .fixing-logo{
+        display: none;
+    }
+
+    @keyframes showNavs {
+        from {
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+       }
+    
+    /* main pane */
+
+    .titlePane{
+        display: flex;
+        width: auto;
+        top: 0;
+        min-height: 100vh;
+    }
+    .titlePane img{
+        display: flex;
+        height: 150px;
+        width: 150px;
+        position: absolute;
+
+    }
+    .titleText{
+        min-height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        align-items: center;
+        width: 100%;
+    }
+    .titleText h1{
+        font-size: 26px;
+    }
+    .titlePane p{
+        font-size: 14px;
+        word-spacing: 1px;
+        width: 250px;
+        text-align: justify;
+    }
+    .titleText button{
+        background: none;
+        border: none;
+        font-size: 13px;
+        background: #14274E;
+        color: #fff;
+        height: 40px;
+        width: 130px;
+        border-radius: 20px;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+
+    /* footer pane */ 
+
+    footer{
+        display: block;
+        width: 100%;
+    }
+    .footer-pane{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        background: #14274E;
+    }
+    .footer-content{
+        display: flex;
+        width: 95%; 
+        justify-content: center;
+        margin-left: 1rem;
+        overflow-x: hidden;
+    }
+    .footer-content ul li a{
+        border-radius: 10px;
+        padding: 2px 2px 5px;
+        justify-content: center;
+        display: flex;
+        height: 20px;
+        width: 20px;
+        align-items: center;
+    }
+    .footer-crdts{
+        display: block;
+        position: relative;
+        width: 200px;
+        top: -50px;
+        left: 2rem;
+    }
+    .footer-crdts p{
+        font-size: 12px;
+        text-align: left;
+        width:300px;
+    }
+ 
+   
+ 
+ 
+
+}
+    
+
+
+
+
+
+
+ 

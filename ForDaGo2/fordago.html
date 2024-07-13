@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>ForDaGooo</title>
+    <link rel="stylesheet" href="fdg-design.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="fdg-script.js" defer></script>
+    <script src="https://www.bing.com/api/maps/mapcontrol?callback=initMap" async defer></script>
+</head>
+</head>
+<body>
+
+     <div class="mainpane">
+
+        <div class="msgpane">
+            <div>
+                <p id="msghere"></p>
+            </div>
+        </div>
+
+        <div class="editform">
+            <p>tap anywhere to cancel</p>
+            <form id="myForm">
+                 <label for="">Name: </label><br>
+                <input type="text" placeholder="" id="modify-name" required>
+                <input type="submit" id="updateName" value="save"> 
+            </form>
+            
+         </div>
+
+        <section class="navigation-bar">
+            <h1 class="title">ForDaGooo</h1>
+            <div class="data-container">
+                <select id="pointOption">
+                    <option value=""></option>
+                </select>
+                <span class="material-symbols-outlined" id="addDataLoc">add</span>
+                <span class="material-symbols-outlined" id="clearDataLoc">close</span>
+            </div>
+            <div class="tableCont">
+                <table id="crud-table" class="tab-element">
+                   
+                </table>
+            </div>
+        </section>
+
+        <section class="map-panel">
+             <div id="searchnav">
+                <input type="text" class="searchbar" placeholder="Search">
+                <img src="FDG_img/fdg-searchbtn.png" alt="" class="searchbtn">
+                <img src="FDG_img/fdg-pinloc.png" alt="" class="pinbtn"><br>
+                <ul class="searchList">
+                </ul>
+             </div>
+             <div class="mapcontainer">
+                <!-- Here's the map-->
+             </div>
+        </section>
+     </div>
+</body>
+</html>

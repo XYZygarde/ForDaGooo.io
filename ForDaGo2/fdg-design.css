@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #D1D8C5;
+}
+.mainpane{
+    height: auto;
+    width: 1100px;
+    margin: 50px auto auto auto;
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    z-index: 33;
+}
+.navigation-bar{
+    position: relative;
+    height: 550px;
+    width: 450px;
+    background: #102C57;
+}
+.title{
+    color: #fff;
+    padding: 30px 50px;
+    font-size: 30px;
+    position: relative;
+}
+.data-container{
+    width: 450px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#crud-table tr td span{
+    color: aqua;
+    cursor: pointer;
+}
+#crud-table tr td span:hover{
+    border-bottom: 1px solid aqua;
+}
+#addDataLoc, #clearDataLoc{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+#addDataLoc{
+    background: #059212;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    border-radius: 50px;
+}
+#clearDataLoc{
+    background: #E4003A;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    border-radius: 50px;
+    margin-left: 15px;
+}
+#addDataLoc:hover{
+    filter: drop-shadow(5px 5px 20px rgb(174, 255, 130));
+}
+#addDataLoc:active{
+    filter: drop-shadow(5px 5px 20px rgb(255, 255, 255));
+}
+
+#clearDataLoc:hover{
+    filter: drop-shadow(5px 5px 20px rgba(255, 113, 144, 0.5));
+}
+#clearDataLoc:active{
+    filter: drop-shadow(5px 5px 20px rgba(255, 255, 255));
+}
+#pointOption{
+    height: 40px;
+    width: 200px;
+    background: none;
+    outline: none;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-right: 30px;
+    padding-left: 10px;
+    border-radius: 10px;
+    outline: #000;
+    appearance: 1px;
+}
+
+#pointOption option{
+    background: #000;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: 12px;
+}
+#pointOption option:hover{
+    background: #fff;
+    color: #000;
+}
+
+.tableCont{
+    position: relative;
+    width: 450px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+.tab-element{
+    height: auto;
+    width: 350px;
+    background: none;
+    margin: 5px 65px;
+    color: #fff;
+    font-size: 15px;
+}
+
+/*map side elements */ 
+
+.map-panel{
+    position: relative;
+    height: 548px;
+    width: 650px;
+}
+#searchnav{
+    margin: 20px 30px;
+    height: 35px;
+    width: 350px;
+    display: flex;
+    position: absolute;
+    z-index: 30;
+}
+.searchbar{
+    height: 30px;
+    width: 250px;
+    border: 0.5px solid rgb(49, 49, 49);
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.searchbtn, .pinbtn{
+    height: 30px;
+    width: 30px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.searchbtn:active, .pinbtn:active{
+    transform: scale(0.85);
+}
+.mapcontainer{
+    height: 550px;
+    width: 650px;
+    z-index: 20;
+}
+.icon-action, .icon-action-this{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+.searchList{
+    position: absolute;
+    list-style: none;
+    margin: 33px 10px;
+    border-radius: 20px 20px;
+}
+.searchList li{
+    background: #fff;
+    font-size: 12px;
+    color: #000;
+    padding: 5px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0,0,0,0.5);
+    width: 230px;
+    cursor: pointer;
+}
+.searchList li:hover{
+    background: rgb(199, 199, 199);
+}
+.glowEffect{
+   transform: scale(0.9);
+   border-radius: 30px;
+   background: rgba(0, 255, 242, 0.2);
+}
+
+
+/* FDG updating table */ 
+
+.editform{
+    height: 550px;
+    width: 1100px;
+    margin: 0 auto auto auto;
+    display: none;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 35;
+    align-items: center;
+    justify-content: center;
+}
+.editform p{
+    color: #fff;
+    position: absolute;
+    margin-top: -500px;
+    font-size: 15px;
+    letter-spacing: 1;
+    padding: 3px;
+}
+.editform form{
+    height: 120px;
+    width: 420px;
+    background: #102C57;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    border-radius: 30px;
+}
+.editform form label{
+    color: #fff;
+    font-size: 15px;
+}
+.editform form input{
+    height: 25px;
+    width: 225px;
+    margin: auto;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+.editform form input[type="submit"]{
+    background: #059212;
+    border: none;
+    color: #fff;
+    height: 30px;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.editform form input[type="submit"]:active{
+    transform: scale(0.9);
+}
+
+/*Message notification */ 
+
+.msgpane{
+    height: 550px;
+    width: 1100px;
+    margin: 0 auto auto auto;
+    display: none;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 36;
+    align-items: center;
+    justify-content: center;
+}
+.msgpane div{
+    height: 150px;
+    width: 450px;
+    background: #102C57;
+    border-radius: 20px;
+    border: 0 4px 8px 0 rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.msgpane div p{
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    height: auto;
+    width: 350px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+        background-size: cover;
+    }
+    .mainpane{
+        margin-top: 0;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .mapcontainer{
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        z-index: 20;
+    }
+    .map-panel{
+        width: auto;
+    }
+    .navigation-bar{
+        position: relative;
+        width: 100%;
+        z-index: 21;
+        justify-content: center;
+        height: 50vh;
+    }
+    .title{
+        width: auto;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .data-container{
+        width: 100%;
+    }
+    .tableCont{
+        overflow-x: hidden;
+        width: 100%;
+        height: 20vh;
+    }
+    .tableCont table{
+        margin: auto;
+        width: auto;
+    }
+    #pointOption{
+        width: 150px;
+    }
+    .tab-element tr td:nth-child(1){
+        width: 220px;
+        
+    }
+
+    /*message pane */
+    .msgpane{
+        display: flex;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /*edit pane */
+    
+    .editform{
+        height: 100%;
+        width: 100%;
+        display: none;
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 0;
+        z-index: 35;
+        align-items: center;
+        justify-content: center;
+    }
+    .editform p{
+        display: none;   
+    }
+    .editform form{
+        width: 90%;
+    }
+    .editform form input[type="text"]{
+        width: 200px;
+    }
+    .editform form input[type="submit"]{
+        margin-right: 1rem;
+    }
+
+
+}
