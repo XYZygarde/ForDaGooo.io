@@ -32,5 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
 //link redirect 
 
 document.getElementById("appDirect").addEventListener('click',()=>{
-   window.location.href = "https://xyzygarde.github.io/ForDagooo.net/ForDaGo/fordago.html";
+   window.location.href = "https://xyzygarde.github.io/ForDaGooo.io/ForDaGo2/fordago.html";
 });
